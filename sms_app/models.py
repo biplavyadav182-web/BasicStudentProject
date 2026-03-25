@@ -12,4 +12,5 @@ class Student(models.Model):
     email = models.EmailField(unique=True)
     message = models.CharField(max_length=255, default=True, null=True)
     
-    
+    class Meta:
+        db_table = 'Student'

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+StudentListPage
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10 mx-auto">
+            <p class="text-center bg-primary text-white fs-2 py-2 mt-3 mb-3">Student List Page</p>
+            <!---- List Form Starts Here  ----->
+            <table class="table table-dark table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">S.N</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Age</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
+                        <!-- <th scope="col">Comments</th> -->
+                        <th scope="col">Action</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for s in sList %}
+                    <tr>
+                        <th scope="row">{{s.id}}</th>
+                        <th scope="row">{{forloop.counter}}</th>
+                        <td>{{s.first_name}}</td>
+                        <td>{{s.last_name}}</td>
+                        <td>{{s.age}}</td>
+                        <td>{{s.email}}</td>
+                        <td>{{s.phone}}</td>
+                        <!-- <td>{{s.message}}</td> -->
+                        <td>
+                            <a href="">
+                                <button class="btn btn-success"><i class="fa-regular fa-pen-to-square"></i></button>
+                            </a>
+
+                            <a href="">
+                                <button class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                            </a>
+                        </td>
+                    </tr>
+
+                </tbody>
+                {% endfor %}
+            </table>
+            <!---- List Form Ends Here  ----->
+        </div>
+    </div>
+</div>
+{% endblock content %}

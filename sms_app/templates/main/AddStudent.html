@@ -10,6 +10,12 @@ StudentAddPage
     <div class="row">
         <div class="col-5 mx-auto">
             <p class="text-center text-white bg-primary py-2 fs-3 mt-4 mb-4">Student Registration Page</p>
+            {% if messages %}
+            {% for m in messages %}
+            <p class="text-center text-success">{{m}}</p>
+            {% endfor %}
+
+            {% endif %}
             <!----- Form starts Here ----->
             <form method="POST" action="{% url 'student_add' %}">
                 {% csrf_token %}
